@@ -1,14 +1,15 @@
 project_path: .
-data_path: PLEASE FILL
+data_path: data/whale_sequence.csv
 read_format: csv
-write_format: parquet
-selected_columns: [EXAMPLE_INPUT_COLUMN_NAME] # should include all target column, can include additional columns
-target_columns: [EXAMPLE_TARGET_COLUMN_NAME]
-return_targets: true
+write_format: csv
+selected_columns: ["interval", "pulse", "speaker"] # should include all target column, can include additional columns
+target_columns: ["interval", "pulse", "speaker"]
 
+seq_length: 25
+seq_step_size: 1
 group_proportions:
 - 0.8
 - 0.1
 - 0.1
-seq_length: 48
-max_rows: null
+max_rows: 
+n_cores: 1

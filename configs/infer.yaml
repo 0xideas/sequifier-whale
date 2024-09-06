@@ -1,17 +1,19 @@
 project_path: .
-ddconfig_path: PLEASE FILL
+ddconfig_path: configs/ddconfigs/whale_sequence.json
 model_path: PLEASE FILL
 data_path: PLEASE FILL
 
-selected_columns: [EXAMPLE_INPUT_COLUMN_NAME] # should include all target column, can include additional columns
-target_columns: [EXAMPLE_TARGET_COLUMN_NAME]
-target_column_types:
-  EXAMPLE_TARGET_COLUMN_NAME: real
+selected_columns: ["interval", "speaker"] # should include all target column, can include additional columns
+target_columns: ["interval", "speaker"]
+target_column_types: # 'criterion' in training_spec must also be adapted
+  interval: real
+  speaker: categorical
 
 output_probabilities: false
 map_to_id: false
-device: cpu
-seq_length: 48
+device: mps
+seq_length: 25
 inference_batch_size: 10
 
 autoregression: true
+autoregression_additional_steps: 20
