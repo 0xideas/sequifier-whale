@@ -2,8 +2,8 @@ project_path: .
 data_path: data/whale_sequence.csv
 read_format: csv
 write_format: csv
-selected_columns: ["interval", "pulse", "speaker"] # should include all target column, can include additional columns
-target_columns: ["interval", "pulse", "speaker"]
+selected_columns: ["interval", "pulse", "speaker", "word_switch"] # should include all target column, can include additional columns
+target_columns: ["interval", "pulse", "speaker", "word_switch"]
 
 seq_length: 25
 seq_step_size: 1
